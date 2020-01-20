@@ -68,15 +68,19 @@ void selectionSort(int *a, int n){
 }
 
 int numSwaps(int *a, int n){
-    int count = 0;
-    int i = 0;
-    while(!isSorted(a,n)){
-        if(maxIndex(a,n-i) < (n-i-1)){
-            count++;
-            swapWithMax(a,n-i);
-        }
-            i++;
-        
-    }
-    return count;
+    int x=0;
+	int i;
+	for(i=0;i<n;i++)
+	{   int l=maxIndex(a,n-i);
+		if(!isSorted(a,n) && l<n-i-1)
+		{   
+		    //swapWithMax(a,n-i);
+		    swap(&a[n-i-1],&a[l]);
+			x++;
+		}
+		if(isSorted(a,n))
+		break;
+		
+	}
+	return x;
 }
