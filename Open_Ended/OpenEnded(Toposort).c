@@ -22,7 +22,7 @@ int* topoSort(int n,int graph[][n]){
             }
         }
         if(flag == 1){
-            printf("DAG Found");
+            printf("Not a DAG");
             for(int i=0;i<n;i++){
                 ans[i] = -1;
             }
